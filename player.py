@@ -13,7 +13,7 @@ class Player(pygame.sprite.Sprite):
     self.direction = pygame.math.Vector2()
     self.speed = PLAYER_SPEED
     
-  def input (self):
+  def input(self):
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_RIGHT]:
@@ -21,7 +21,11 @@ class Player(pygame.sprite.Sprite):
     elif keys[pygame.K_LEFT]:
       self.direction.x = -1
     else:
-      self.direction = 0
+      self.direction.x = 0
 
     if keys[pygame.K_SPACE]:
       print("jump")
+
+  def update(self):
+    self.input()
+    self.rect.topleft += self.direction * self.speed
