@@ -21,9 +21,9 @@ class Level:
         x = column_index * TILE_SIZE
         y = row_index * TILE_SIZE
         if column == 'X':
-          Tile((x, y), [self.visible_sprites])
+          Tile((x, y), [self.visible_sprites, self.collision_sprites])
         if column == 'P':
-          Player((x, y), [self.visible_sprites, self.active_sprites])
+          Player((x, y), [self.visible_sprites, self.active_sprites], self.collision_sprites)
 
   def run(self):
     self.active_sprites.update()
