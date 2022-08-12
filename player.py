@@ -9,3 +9,19 @@ class Player(pygame.sprite.Sprite):
     self.image = pygame.Surface((TILE_SIZE // 2, TILE_SIZE))
     self.image.fill(PLAYER_COLOR)    
     self.rect = self.image.get_rect(topleft = position)
+
+    self.direction = pygame.math.Vector2()
+    self.speed = PLAYER_SPEED
+    
+  def input (self):
+    keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_RIGHT]:
+      self.direction.x = 1
+    elif keys[pygame.K_LEFT]:
+      self.direction.x = -1
+    else:
+      self.direction = 0
+
+    if keys[pygame.K_SPACE]:
+      print("jump")

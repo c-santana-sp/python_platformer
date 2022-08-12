@@ -22,6 +22,8 @@ TILE_COLOR = '#94D7F2'
 
 FPS = 60
 
+PLAYER_SPEED = 10
+
 CAMERA_BORDERS = {
   'right': 200,
   'bottom': 150,
